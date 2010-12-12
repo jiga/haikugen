@@ -1,5 +1,5 @@
 gingerbread,@jiga,phone,nexusS
 wants to win,gets,writes a code,has arrived
 a,the,an,just,i'm
-geeky,faster,tasty,windy,amazing,hungry
+geeky,fast,tasty,amazing,hungry
 on,in.of,under,using

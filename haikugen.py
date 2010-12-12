@@ -14,7 +14,7 @@ prepositions = ''
 
 dictionary = [nouns,verbs,articles,adjectives,prepositions]
 
-poem1 = [['article','adjective','adjective','noun'],['preposition','article','adjective','noun'],['article','noun','verb']]
+form1 = [['article','adjective','adjective','noun'],['preposition','article','adjective','noun'],['noun','verb']]
 
 select = {  
              'noun': 0
@@ -27,12 +27,17 @@ select = {
 def gen(vocab):
     return random.sample(dictionary[select[vocab]],1)[0]
 
-def haiku(poem):
-    for line in poem:
+def haiku(form):
+    poem = ''
+    for line in form:
         output = ''
         for vocab in line:
             output += str(gen(vocab))+' '
-        print output
+        poem += output+'/'
+
+    poem = poem[:-1]+' #7'
+
+    return poem
 
 def main():
     if len(sys.argv) < 2:
@@ -45,10 +50,8 @@ def main():
         dictionary[i] = row
         i = i + 1
 
-    print dictionary
-    
     print "~~~~~~~~ Haiku ~~~~~~~\n"
-    print haiku(poem1)
+    print haiku(form1)
 
 if __name__ == "__main__":
     main()
